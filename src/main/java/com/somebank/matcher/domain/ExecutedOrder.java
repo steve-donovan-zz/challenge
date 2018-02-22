@@ -1,7 +1,4 @@
-package com.somebank.matcher.pojos;
-
-import com.somebank.matcher.pojos.Order;
-import com.somebank.matcher.pojos.RIC;
+package com.somebank.matcher.domain;
 
 import java.math.BigDecimal;
 import java.util.Objects;

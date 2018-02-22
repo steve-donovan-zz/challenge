@@ -1,9 +1,9 @@
 package com.somebank.matcher;
 
-import com.somebank.matcher.pojos.Order;
-import com.somebank.matcher.pojos.OrderDirection;
-import com.somebank.matcher.pojos.RIC;
-import com.somebank.matcher.pojos.User;
+import com.somebank.matcher.domain.Order;
+import com.somebank.matcher.domain.OrderDirection;
+import com.somebank.matcher.domain.RIC;
+import com.somebank.matcher.domain.User;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static com.somebank.matcher.pojos.OrderDirection.*;
+import static com.somebank.matcher.domain.OrderDirection.*;
 
 public class MatchingEngineTest {
 

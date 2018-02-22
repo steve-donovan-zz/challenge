@@ -1,4 +1,4 @@
-package com.somebank.matcher.pojos;
+package com.somebank.matcher.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

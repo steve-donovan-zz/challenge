@@ -1,33 +1,37 @@
 package com.somebank.matcher;
 
-import com.somebank.matcher.pojos.*;
+import com.somebank.matcher.domain.*;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
 
 public class MatchingEngine {
 
-    private ConcurrentLinkedQueue<Order> openOrders = new ConcurrentLinkedQueue();
-    private ConcurrentLinkedQueue<ExecutedOrder> executedOrders = new ConcurrentLinkedQueue();
+    private static final String INVALID_ARG_MSG = "Argument must not be null.";
+
+    private final Queue<Order> openOrders = new ConcurrentLinkedQueue();
+    private final Queue<ExecutedOrder> executedOrders = new ConcurrentLinkedQueue();
 
 
     public void addOrder(Order order) {
 
-        Objects.requireNonNull(order, "Argument must not be null.");
+        Objects.requireNonNull(order, INVALID_ARG_MSG);
 
         List<Order> matches = getOrderMatches(order);
 
         if (matches.size() > 0) {
-            moveOrder(order, matches);
+            processMatchedOrders(order, matches);
         } else {
             openOrders.add(order);
         }
     }
 
-    private void moveOrder(Order latestOrder, List<Order> matches) {
+    private void processMatchedOrders(Order latestOrder, List<Order> matches) {
+
+        Objects.requireNonNull(latestOrder, INVALID_ARG_MSG);
+        Objects.requireNonNull(matches, INVALID_ARG_MSG);
 
         Order[] orderPair = new Order[2];
         Order matchedOrder;
@@ -67,14 +71,14 @@ public class MatchingEngine {
 
     private List<Order> getOrderMatches(Order order) {
 
-        Objects.requireNonNull(order, "Argument must not be null.");
+        Objects.requireNonNull(order, INVALID_ARG_MSG);
 
         // Two orders match if they have opposing directions, matching RICs and quantities, and if the
         // sell price is less than or equal to the buy price
 
         List<Order> matches = openOrders.stream()
                 .filter(o -> o.getRic().equals(order.getRic())
-                        && o.getOrderDirection() != order.getOrderDirection()
+                        && isOppositeDirection(o, order)
                         && o.getQuantity() == order.getQuantity())
                 .filter(o -> o.getOrderDirection() == OrderDirection.SELL && (o.getPrice().compareTo(order.getPrice()) < 1)
                         || (order.getOrderDirection() == OrderDirection.SELL && (order.getPrice().compareTo(o.getPrice()) < 1)))
@@ -83,48 +87,22 @@ public class MatchingEngine {
         return matches;
     }
 
+    private boolean isOppositeDirection(Order o1, Order o2) {
+        return o1.getOrderDirection() != o2.getOrderDirection();
+    }
+
     public Map<BigDecimal, Long> getOpenInterest(RIC ric, OrderDirection orderDirection) {
-        return openOrders.stream()
-                .filter(o -> o.getRic().equals(ric))
-                .filter(o -> o.getOrderDirection() == orderDirection)
-                .collect(Collectors.groupingBy(Order::getPrice, Collectors.summingLong(Order::getQuantity)));
+
+        return OrderReporting.getOpenInterest(ric, orderDirection, openOrders);
     }
 
     public BigDecimal getAveragePerUnitExecutionPrice(RIC ric) {
-        List<ExecutedOrder> matches = executedOrders.stream()
-                .filter(o -> o.getRic().equals(ric))
-                .collect(Collectors.toList());
 
-        if (matches.size() == 0) {
-            return BigDecimal.ZERO;
-        }
-
-        // (1000 * 100.2 + 500 * 103) / 1500
-        long totalQuantity = 0;
-        BigDecimal perUnitAvg = BigDecimal.ZERO;
-        for (ExecutedOrder order : matches) {
-            totalQuantity += order.getQuantity();
-            perUnitAvg = perUnitAvg.add(order.getExecutedPrice().multiply(BigDecimal.valueOf(order.getQuantity())));
-        }
-
-        return perUnitAvg.divide(new BigDecimal(totalQuantity), 4, RoundingMode.HALF_DOWN);
+        return OrderReporting.getAveragePerUnitExecutionPrice(ric, executedOrders);
     }
 
     public long getExecutedQuantity(RIC ric, User user) {
-        List<Order> orders = executedOrders.stream()
-                .filter(o -> o.getRic().equals(ric))
-                .flatMap(o -> Arrays.stream(o.getExecutedTrade()))
-                .filter(o -> o.getUser().equals(user))
-                .collect(Collectors.toList());
 
-        long balance = 0;
-        for (Order order : orders) {
-            if (order.getOrderDirection() == OrderDirection.SELL) {
-                balance -= order.getQuantity();
-            } else {
-                balance += order.getQuantity();
-            }
-        }
-        return balance;
+        return OrderReporting.getExecutedQuantity(ric, user, executedOrders);
     }
 }
