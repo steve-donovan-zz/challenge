@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c686cee1-74b7-4b8c-971c-45aa926e4138" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/MatchingEngine.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/MatchingEngine.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/pojos/ExecutedOrder.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/domain/ExecutedOrder.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/pojos/Order.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/domain/Order.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/pojos/OrderDirection.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/domain/OrderDirection.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/pojos/OrderStatus.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/domain/OrderStatus.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/pojos/RIC.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/domain/RIC.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/pojos/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/somebank/matcher/domain/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/somebank/matcher/MatchingEngineTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/somebank/matcher/MatchingEngineTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchingEngine.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MatchingEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/somebank/matcher/MatchingEngine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="301">
@@ -59,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderReporting.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrderReporting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/somebank/matcher/OrderReporting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -332,9 +323,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MatchingEngineTest - 2018.02.22 at 15h 46m 58s.xml">
-      <configuration name="MatchingEngineTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MatchingEngineTest - 2018.02.22 at 16h 27m 45s.xml">
       <configuration name="MatchingEngineTest" configurationId="JUnit" />
     </history-entry>
@@ -362,10 +350,12 @@
     <history-entry file="MatchingEngineTest - 2018.02.22 at 18h 49m 33s.xml">
       <configuration name="MatchingEngineTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MatchingEngineTest - 2018.02.22 at 18h 52m 21s.xml">
+      <configuration name="MatchingEngineTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -376,8 +366,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2958035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2958035" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32958034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24969475" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -423,16 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/somebank/matcher/OrderReporting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/somebank/matcher/MatchingEngine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -440,6 +420,16 @@
           <folding>
             <element signature="e#3400#3401#0" expanded="true" />
             <element signature="e#3471#3472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/somebank/matcher/OrderReporting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
